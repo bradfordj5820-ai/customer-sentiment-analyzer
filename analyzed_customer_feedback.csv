@@ -1,0 +1,21 @@
+name,age,city,feedback,sentiment
+James,28,Houston,The delivery was extremely bad.,Negative
+Maria,34,Austin,The delivery was extremely terrible.,Negative
+Robert,45,Dallas,The service was amazing.,Positive
+Linda,22,San Antonio,"Honestly, the quality is terrible.",Negative
+Michael,51,El Paso,The product arrived on time.,Neutral
+Sarah,31,Fort Worth,It is what I expected.,Neutral
+David,29,Houston,"Everything was excellent, thank you!",Positive
+Jennifer,38,Austin,The service was the slow I've seen.,Negative
+William,55,Dallas,"Honestly, the quality is poor.",Negative
+Elizabeth,26,San Antonio,I have been using it for a week.,Neutral
+John,41,Houston,I have been using it for a week.,Neutral
+Jessica,33,Austin,"Everything was excellent, thank you!",Positive
+Joseph,24,Dallas,Standard delivery service.,Neutral
+Karen,49,San Antonio,The service was the slow I've seen.,Negative
+Thomas,37,El Paso,Standard delivery service.,Neutral
+Nancy,30,Fort Worth,"Honestly, the quality is bad.",Negative
+Charles,42,Houston,The product arrived on time.,Neutral
+Lisa,27,Austin,The product arrived on time.,Neutral
+Christopher,35,Dallas,The service was excellent.,Positive
+Margaret,50,San Antonio,I had an excellent experience.,Positive
