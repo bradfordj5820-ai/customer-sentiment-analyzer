@@ -11,17 +11,20 @@ Original file is located at
 
 import pandas as pd
 from dataclasses import dataclass
+from pathlib import Path
 #import matplotlib.pyplot as plt
 
 # Load and Merge Data
 #customers = pd.read_csv('/content/drive/MyDrive/Python Data Files/Customer_Data.csv')
-customers = pd.read_csv('Customer_Data.csv')
+BASE_DIR = Path(__file__).resolve().parent
+
+customers = pd.read_csv(BASE_DIR / 'Customer_Data.csv')
 #feedback = pd.read_csv('/content/drive/MyDrive/Python Data Files/customer_feedback.csv')
-feedback = pd.read_csv('customer_feedback.csv')
-merged_data = pd.merge(customers, feedback, on='name')
+feedback = pd.read_csv(BASE_DIR / 'customer_feedback.csv')
 
 # Rename DataFrame columns to match dataclass field names (case-insensitive issue)
-df.rename(columns={'Name': 'name', 'Age': 'age', 'City': 'city'}, inplace=True)
+customers.rename(columns={'Name': 'name', 'Age': 'age', 'City': 'city'}, inplace=True)
+merged_data = pd.merge(customers, feedback, on='name')
 
 #print(df.head())
 
@@ -31,7 +34,7 @@ class Customer:
     age: str
     city: str
 
-customer_list =[Customer(**row.to_dict()) for index, row in df.iterrows()] #Distribute customer data into Customer class
+customer_list =[Customer(**row.to_dict()) for index, row in customers.iterrows()] #Distribute customer data into Customer class
 
 
 #Analyze Customer Feedback
@@ -46,7 +49,7 @@ def get_sentiment(text):
     return 'Neutral'
 
 merged_data['sentiment'] = merged_data['feedback'].apply(get_sentiment)
-merged_data.to_csv('analyzed_customer_feedback.csv', index=False)
+merged_data.to_csv(BASE_DIR / 'analyzed_customer_feedback.csv', index=False)
 
 #Generate Summary Report
 
