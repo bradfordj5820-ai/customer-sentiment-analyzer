@@ -21,9 +21,9 @@ feedback = pd.read_csv('customer_feedback.csv')
 merged_data = pd.merge(customers, feedback, on='name')
 
 # Rename DataFrame columns to match dataclass field names (case-insensitive issue)
-df.rename(columns={'Name': 'name', 'Age': 'age', 'City': 'city'}, inplace=True)
+customers.rename(columns={'Name': 'name', 'Age': 'age', 'City': 'city'}, inplace=True)
 
-#print(df.head())
+#print(customers.head())
 
 @dataclass #Establish a data class to facilitate effective data processing
 class Customer:
@@ -31,7 +31,7 @@ class Customer:
     age: str
     city: str
 
-customer_list =[Customer(**row.to_dict()) for index, row in df.iterrows()] #Distribute customer data into Customer class
+customer_list =[Customer(**row.to_dict()) for index, row in customers.iterrows()] #Distribute customer data into Customer class
 
 
 #Analyze Customer Feedback
