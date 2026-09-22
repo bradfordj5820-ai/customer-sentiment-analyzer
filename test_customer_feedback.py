@@ -35,6 +35,10 @@ class CustomerFeedbackScriptTests(unittest.TestCase):
             self.assertEqual(len(rows), 20)
             self.assertIn("sentiment", rows[0])
 
+            james_row = next(row for row in rows if row["name"] == "James")
+            self.assertEqual(james_row["city"], "Houston")
+            self.assertEqual(james_row["sentiment"], "Negative")
+
 
 if __name__ == "__main__":
     unittest.main()
