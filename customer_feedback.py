@@ -21,10 +21,10 @@ BASE_DIR = Path(__file__).resolve().parent
 customers = pd.read_csv(BASE_DIR / 'Customer_Data.csv')
 #feedback = pd.read_csv('/content/drive/MyDrive/Python Data Files/customer_feedback.csv')
 feedback = pd.read_csv(BASE_DIR / 'customer_feedback.csv')
-merged_data = pd.merge(customers, feedback, on='name')
 
 # Rename DataFrame columns to match dataclass field names (case-insensitive issue)
 customers.rename(columns={'Name': 'name', 'Age': 'age', 'City': 'city'}, inplace=True)
+merged_data = pd.merge(customers, feedback, on='name')
 
 #print(df.head())
 
